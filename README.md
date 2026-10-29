@@ -209,7 +209,7 @@ Both services deploy from this one repository.
 | Runtime | Python 3 |
 | Build Command | `pip install -r requirements.txt` |
 | Start Command | `uvicorn app.main:app --host 0.0.0.0 --port $PORT` |
-| Env var | `CORS_ORIGINS` = your frontend URL |
+| Env var | `CORS_ORIGINS` = https://skribbl-clone-k8cu.onrender.com/ |
 
 ### Frontend (Static Site)
 | Field | Value |
@@ -217,7 +217,7 @@ Both services deploy from this one repository.
 | Root Directory | `frontend` |
 | Build Command | `npm install && npm run build` |
 | Publish Directory | `dist` |
-| Env var | `VITE_API_URL` = your backend URL (no trailing slash) |
+| Env var | `VITE_API_URL` = (https://skribbl-clone-api.onrender.com/docs?) |
 | Redirects/Rewrites | Source `/*`, Destination `/index.html`, Action `Rewrite` |
 
 Deploy the backend first, copy its URL into the frontend's `VITE_API_URL`, deploy the frontend, then set the backend's `CORS_ORIGINS` to the frontend URL and redeploy. `render.yaml` describes both services if you prefer a Blueprint deploy.
