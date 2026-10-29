@@ -9,8 +9,8 @@ A real-time multiplayer drawing and guessing game inspired by [skribbl.io](https
 ![SQLite](https://img.shields.io/badge/SQLite-3-003b57?logo=sqlite&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-23%20passing-brightgreen)
 
-**Live demo:** https://YOUR-FRONTEND.onrender.com
-**API docs:** https://YOUR-API.onrender.com/docs
+**Live demo:** https://skribbl-clone-k8cu.onrender.com/
+**API docs:** https://skribbl-clone-api.onrender.com/docs
 
 > The free Render tier sleeps after 15 minutes of inactivity. The first request can take about a minute to wake the server.
 
