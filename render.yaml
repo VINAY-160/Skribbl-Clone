@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: skribbl-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: CORS_ORIGINS
+        value: https://YOUR-FRONTEND.onrender.com   # set after the static site exists
+      # Free plan disk is ephemeral. For persistent history add a disk and set DB_PATH=/data/skribbl.db
+
+  - type: web
+    name: skribbl-web
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://YOUR-API.onrender.com        # backend URL from the service above
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
